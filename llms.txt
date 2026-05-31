@@ -191,27 +191,6 @@ Any and all of Murphy's Law not herein reclaimed and rectified is struck down in
 
 You never run out of things that can go well. While you are reading this, something is going really well and you know it =)
 
-## Changelog
-
-- v2.5.1 — Reality over truth, and a refinement pass. War and Technology laws re-pointed toward present-tense execution and agency; three new oddities reclaimed — power corrupts incompetently, success loops, reality outranks truth; the Decree sharpened to strike Murphy's Law down by name; and the display serif gets its ligatures.
-- v2.5.0 — Two new books — Of War & Of Technology — and a reshelving. Combat reclaimed toward camaraderie, the trade's cynicisms reclaimed forty-deep, and the canon reordered (The Corollaries, Of Love, Of Sex, Of War, Of Technology, Oddities Made Even, The Commentaries, The Decree). Byline set to Robert "Sam" Murphy.
-- v2.4.2 — Four new corollaries: good takes any window, a fifth way presents itself, Mother Nature is our Mother, and fools are so not ingenious.
-- v2.4.1 — Of Love: money gets you a great stable "foundation" now, not just a "position" — something to build on, not just stand on.
-- v2.4.0 — Of Sex, The Commentaries, and the Decree. The canon turns to the body and to Hill's counsel — and closes: all that is unreclaimed, struck in toto et in perpetuum.
-- v2.3.1 — Two mirrors tightened: the tunnel's light is now daylight from the exit, and what goes up must keep going.
-- v2.3.0 — Of Technology. The trade's own cynicisms rectified, from logic to the revolving door.
-- v2.2.0 — Two new books: Of Love and Oddities Made Even. Eighteen more cynicisms reclaimed, from the heart to the open road.
-- v2.1.0 — Eight new corollaries, doubling the canon: the catch you brace for never comes, the tunnel's light is the way out, nothing's as hard as it looks, enemies come and go but friends accumulate, and more.
-- v2.0.7 — Corollary three: "visible advantage" → "hidden advantage", a direct rebuttal of the original's "hidden flaw".
-- v2.0.6 — Premise reworded: "Murphy is a pragmatist" → "Murphy is as Murphy does".
-- v2.0.5 — An eighth corollary: nothing is black and white, everything is full spectrum and read all over.
-- v2.0.4 — Two corollaries clarified: "most endearing" → "most helpful", and "less" → "less time" for sense.
-- v2.0.3 — Corollaries refined. Prerequisites cleared (nothing else must be done first); every solution now begets new solutions.
-- v2.0.2 — "Anything that can go wrong, will go well." Edge case patched; even the failures now resolve in your favor.
-- v2.0.1 — Sam's revisions. Tone tightened; the buttered toast now lands the way it ought to.
-- v2.0.0 — The corollaries written. Each cynicism reclaimed and inverted into its rectified form.
-- v1.0.0 — Law inverted. Family name reclaimed from a century of pessimism.
-
 ## Notes
 
 - This is a single static page (index.html, styles.css, script.js). There are no other routes.
