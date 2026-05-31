@@ -1,0 +1,581 @@
+/* ============================================================
+   Murphy's Law (Rectified) — "Release notes for optimism"
+   Warm editorial skin over a software-changelog structure.
+   ============================================================ */
+
+:root {
+  /* warm optimism palette */
+  --bg:        oklch(0.973 0.013 80);
+  --bg-deep:   oklch(0.955 0.020 78);
+  --panel:     oklch(0.984 0.010 84);
+  --ink:       oklch(0.275 0.022 60);
+  --ink-soft:  oklch(0.470 0.022 62);
+  --ink-faint: oklch(0.640 0.020 66);
+  --line:      oklch(0.885 0.018 78);
+  --line-soft: oklch(0.925 0.014 80);
+
+  --sun:       oklch(0.800 0.135 72);
+  --sun-deep:  oklch(0.690 0.140 58);
+
+  --minus:     oklch(0.575 0.115 33);   /* terracotta */
+  --minus-bg:  oklch(0.945 0.030 42);
+  --plus:      oklch(0.545 0.095 138);  /* warm olive-green */
+  --plus-bg:   oklch(0.945 0.045 132);
+
+  --serif: "Bodoni Moda", Georgia, serif;
+  --sans:  "Switzer", "IBM Plex Sans", system-ui, sans-serif;
+  --sans2: "IBM Plex Sans", system-ui, sans-serif;
+  --mono:  "IBM Plex Mono", ui-monospace, monospace;
+
+  --maxw: 980px;
+  --gutter: clamp(20px, 5vw, 64px);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Bodoni Moda: enable common + discretionary ligatures wherever the display serif is used */
+.wordmark,
+.hero__new,
+.band p,
+.sec-head h2,
+.foot__law {
+  font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+}
+
+/* very soft sun glow, top-center — subtle, not a gradient wash */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20vh -20vw auto -20vw;
+  height: 70vh;
+  background: radial-gradient(60% 100% at 50% 0%,
+              oklch(0.92 0.075 82 / 0.55), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+
+::selection { background: var(--sun); color: oklch(0.25 0.03 60); }
+
+a { color: inherit; }
+
+/* ---------------------------------------------------------- mono labels */
+.mono {
+  font-family: var(--mono);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.kicker {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0;
+}
+
+/* version tag pill */
+.vtag {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--sun-deep);
+  border: 1px solid color-mix(in oklch, var(--sun) 55%, var(--line));
+  background: color-mix(in oklch, var(--sun) 12%, var(--panel));
+  padding: 0.2em 0.6em;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ============================================================ topbar */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px var(--gutter);
+  background: color-mix(in oklch, var(--bg) 82%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.topbar.stuck { border-color: var(--line); }
+.wordmark {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 6;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+}
+.wordmark sup {
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.5em;
+  vertical-align: super;
+  color: var(--sun-deep);
+  margin-left: 0.15em;
+}
+.topbar__meta { display: flex; align-items: center; gap: 14px; }
+.topbar__by {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+@media (max-width: 620px) { .topbar__by { display: none; } }
+
+/* ============================================================ hero */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: calc(75svh - 54px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(32px, 5vh, 64px) 0 clamp(40px, 7vh, 80px);
+}
+.hero__kick {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: clamp(28px, 5vh, 52px);
+}
+.hero__kick .kicker { white-space: nowrap; flex: none; }
+.hero__kick .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.diff { position: relative; }
+
+/* Shared diff layout: marker lives in its own gutter column, text beside it.
+   No absolute positioning → never drifts or collides at any width / line count. */
+.hero__old, .hero__new, .law__old, .law__new {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+}
+.hero__old .line, .hero__new .line,
+.law__old .line, .law__new .line { min-width: 0; }
+
+/* struck-out original line (hero) */
+.old {
+  font-family: var(--sans2);
+  color: var(--minus);
+  font-weight: 400;
+}
+.old .sig { color: var(--minus); opacity: 0.7; }
+.old .line {
+  width: max-content;
+  max-width: 100%;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 58%;
+  background-size: 0% 0.08em;
+  transition: background-size 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.in .old .line { background-size: 100% 0.08em; }
+
+.hero__old {
+  column-gap: 0.45em;
+  font-size: clamp(1rem, 2.4vw, 1.5rem);
+  margin: 0 0 0.5em;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.in .hero__old { opacity: 0.85; transform: none; }
+
+/* rectified law — the big Bodoni moment */
+.hero__new {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 20;
+  font-weight: 500;
+  font-size: clamp(2.1rem, 6.5vw, 5.05rem);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  margin: 0;
+  column-gap: 0.34em;
+  color: var(--ink);
+  clip-path: inset(-0.1em 102% -0.22em 0);
+  transition: clip-path 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.45s;
+}
+.hero__new em {
+  font-style: italic;
+  color: var(--sun-deep);
+}
+.in .hero__new { clip-path: inset(-0.1em -2% -0.22em 0); }
+
+.hero__new .sig {
+  font-family: var(--mono);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.3em;
+  color: var(--plus);
+  align-self: start;
+  transform: translateY(0.5em);
+}
+
+.caret {
+  display: inline-block;
+  width: 0.06em;
+  min-width: 3px;
+  height: 0.82em;
+  background: var(--sun-deep);
+  margin-left: 0.08em;
+  vertical-align: -0.04em;
+  opacity: 0;
+}
+.in .caret {
+  animation: blink 0.9s steps(1) 1.5s 4, fadeCaret 0.2s linear 5.1s forwards;
+}
+@keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes fadeCaret { to { opacity: 0; } }
+
+.hero__byline {
+  margin: clamp(28px, 5vh, 48px) 0 0;
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+  max-width: 46ch;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s ease 1.1s, transform 0.6s ease 1.1s;
+}
+.in .hero__byline { opacity: 1; transform: none; }
+.hero__byline strong { color: var(--ink); font-weight: 600; }
+
+/* ============================================================ pragmatist band */
+.band {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-deep);
+  padding: clamp(48px, 9vh, 96px) 0;
+  text-align: center;
+}
+.band p {
+  margin: 0;
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 20;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.8rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.band .dot { color: var(--sun-deep); }
+.band .sub {
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 1.4em;
+}
+/* the Decree's eyebrow: match the section kickers, not the band's serif body */
+.band .kicker {
+  font-family: var(--mono);
+  font-variation-settings: normal;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+/* the closing line: styled like the hero byline, not the band's serif body */
+.band .closing-note {
+  font-family: var(--sans);
+  font-variation-settings: normal;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0 auto;
+}
+
+/* ============================================================ corollaries */
+.corollaries {
+  position: relative;
+  z-index: 1;
+  padding: clamp(64px, 11vh, 128px) 0 clamp(40px, 7vh, 80px);
+}
+.sec-head { margin-bottom: clamp(40px, 7vh, 72px); }
+.sec-head h2 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 20;
+  font-weight: 500;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  letter-spacing: -0.01em;
+  margin: 0.4em 0 0;
+}
+.sec-head h2 em { font-style: italic; color: var(--sun-deep); }
+.sec-head .note {
+  margin: 0.7em 0 0;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+.laws { display: flex; flex-direction: column; gap: clamp(16px, 2.6vh, 26px); }
+
+.law {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: clamp(14px, 2.4vw, 28px);
+  align-items: start;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: clamp(20px, 3vw, 32px) clamp(20px, 3vw, 36px);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.law.in { opacity: 1; transform: none; }
+.law:hover {
+  border-color: color-mix(in oklch, var(--sun) 45%, var(--line));
+  box-shadow: 0 14px 40px -28px oklch(0.55 0.12 60 / 0.8);
+}
+
+.law__num {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--sun-deep);
+  padding-top: 0.25em;
+  letter-spacing: 0.02em;
+}
+
+.law__diff { min-width: 0; }
+.law__old {
+  column-gap: 0.5em;
+  font-family: var(--sans2);
+  font-size: clamp(0.92rem, 1.9vw, 1.05rem);
+  color: var(--minus);
+  margin: 0 0 0.6em;
+}
+/* Native line-through so long originals wrap and every wrapped line is struck.
+   Animate the strike's fade-in (color), which is wrap-safe — unlike the old
+   background-size grow, which forced a single non-wrapping line. */
+.law__old .line {
+  text-decoration: line-through;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 0.07em;
+  transition: text-decoration-color 0.6s ease 0.15s;
+}
+.law.in .law__old .line { text-decoration-color: currentColor; }
+
+.law__new {
+  column-gap: 0.5em;
+  font-family: var(--sans);
+  font-weight: 450;
+  font-size: clamp(1.18rem, 2.9vw, 1.7rem);
+  line-height: 1.28;
+  color: var(--ink);
+  margin: 0;
+  clip-path: inset(-0.05em 102% -0.18em 0);
+  transition: clip-path 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.55s;
+}
+.law.in .law__new { clip-path: inset(-0.05em -2% -0.18em 0); }
+.law__new em {
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 600;
+  color: var(--sun-deep);
+}
+
+.sig {
+  font-family: var(--mono);
+  font-weight: 500;
+}
+.law__old .sig { color: var(--minus); font-size: 0.82em; }
+.law__new .sig {
+  color: var(--plus);
+  font-size: 0.6em;
+  align-self: start;
+  transform: translateY(0.42em);
+}
+
+.law__caret {
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  background: var(--sun-deep);
+  margin-left: 0.1em;
+  vertical-align: -0.06em;
+  opacity: 0;
+}
+.law.in .law__caret {
+  animation: blink 0.85s steps(1) 1.3s 3, fadeCaret 0.2s linear 4s forwards;
+}
+
+/* ============================================================ changelog */
+.changelog {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--line);
+  background: var(--bg-deep);
+  padding: clamp(56px, 10vh, 112px) 0;
+}
+.changelog .sec-head { margin-bottom: clamp(32px, 5vh, 56px); }
+.clog {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.clog__row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: clamp(16px, 3vw, 40px);
+  align-items: baseline;
+  padding: clamp(16px, 2.6vh, 24px) 0;
+  border-top: 1px solid var(--line);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.clog__row:last-child { border-bottom: 1px solid var(--line); }
+.clog.in .clog__row { opacity: 1; transform: none; }
+.clog.in .clog__row:nth-child(2) { transition-delay: 0.08s; }
+.clog.in .clog__row:nth-child(3) { transition-delay: 0.16s; }
+.clog.in .clog__row:nth-child(4) { transition-delay: 0.24s; }
+.clog.in .clog__row:nth-child(5) { transition-delay: 0.32s; }
+.clog__ver { padding-top: 0.1em; }
+.clog__body { font-size: 1.02rem; color: var(--ink-soft); }
+.clog__body strong { color: var(--ink); font-weight: 600; }
+
+/* ============================================================ footer */
+.foot {
+  position: relative;
+  z-index: 1;
+  padding: clamp(40px, 7vh, 72px) 0 clamp(56px, 9vh, 96px);
+  text-align: center;
+}
+.foot__law {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 10;
+  font-style: italic;
+  font-size: clamp(1.3rem, 3.4vw, 2.1rem);
+  margin: 0 0 1.4em;
+  letter-spacing: -0.01em;
+}
+.foot__law em { color: var(--sun-deep); }
+.foot__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+.foot__meta .dom { color: var(--sun-deep); }
+.foot__meta .sep { color: var(--line); }
+
+/* ============================================================ responsive */
+@media (max-width: 760px) {
+  .laws { gap: clamp(12px, 2vw, 20px); }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+
+  .topbar { padding: 13px var(--gutter); }
+
+  /* hero */
+  .hero { min-height: calc(74svh - 50px); }
+  .hero__kick { margin-bottom: clamp(22px, 4vh, 36px); }
+  .hero__old { font-size: 0.95rem; }
+  .hero__new { font-size: clamp(1.95rem, 9vw, 2.7rem); line-height: 1.08; }
+  .hero__byline { font-size: 0.97rem; max-width: none; }
+
+  /* pragmatist band */
+  .band p { font-size: clamp(1.7rem, 7.4vw, 2.4rem); }
+
+  /* corollaries — stack number above the diff; markers keep their gutter */
+  .law { grid-template-columns: 1fr; gap: 6px; padding: 22px; }
+  .law__num { padding-top: 0; font-size: 0.82rem; }
+  .law__new { font-size: clamp(1.12rem, 5.2vw, 1.45rem); line-height: 1.32; }
+
+  /* Let struck originals wrap inside the card instead of overflowing.
+     The animated background-strike only spans one line, so on narrow
+     screens swap to a native line-through that strikes every wrapped line. */
+  .law__old .line,
+  .hero__old .line {
+    width: auto;
+    max-width: 100%;
+    background-image: none;
+    text-decoration: line-through;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 0.07em;
+  }
+
+  /* changelog */
+  .clog__row { grid-template-columns: 1fr; gap: 6px; }
+  .clog__ver { justify-self: start; }  /* pill hugs its content, not full-width */
+  .clog__body { font-size: 0.97rem; }
+
+  /* footer — one item per line, drop the slashes */
+  .foot__law { font-size: clamp(1.4rem, 6.4vw, 1.9rem); }
+  .foot__meta { flex-direction: column; gap: 8px; }
+  .foot__meta .sep { display: none; }
+}
+
+@media (max-width: 380px) {
+  :root { --gutter: 18px; }
+  .hero__new { font-size: clamp(1.7rem, 8.4vw, 2.1rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .old .line { background-size: 100% 0.08em; }
+  .law__old .line { text-decoration-color: currentColor; }
+  .hero__new, .law__new { clip-path: none; }
+  .hero__old, .hero__byline, .law, .clog__row { opacity: 1; transform: none; }
+  .caret, .law__caret { display: none; }
+}
+
+/* ---- No-JS / failed-JS fallback: never leave content permanently hidden ---- */
+html:not(.js) .hero__old,
+html:not(.js) .hero__byline,
+html:not(.js) .law,
+html:not(.js) .clog__row { opacity: 1; transform: none; }
+html:not(.js) .hero__new,
+html:not(.js) .law__new { clip-path: none; }
+html:not(.js) .old .line { background-size: 100% 0.08em; }
+html:not(.js) .law__old .line { text-decoration-color: currentColor; }
+html:not(.js) .caret,
+html:not(.js) .law__caret { display: none; }
