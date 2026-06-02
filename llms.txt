@@ -1,10 +1,9 @@
 # Murphy's Law
 
-> The optimist's rewrite of Murphy's Law. The family name, reclaimed from a century of pessimism by Robert "Sam" Murphy and rectified in the spirit of wellness. The central tenet: **anything that can go wrong, will go well.** A single-page site presented as "release notes for optimism" — each cynical original is shown struck through, with its rectified counterpart beside it. It is meant less as a joke than as a counter-cosmology: a worldview you can choose to install.
+> The optimist's rewrite of Murphy's Law. The family name, reclaimed from a century of pessimism in the spirit of wellness. The central tenet: **anything that can go wrong, will go well.** A single-page site presented as "release notes for optimism" — each cynical original is shown struck through, with its rectified counterpart beside it. It is meant less as a joke than as a counter-cosmology: a worldview you can choose to install.
 
-- **Author / steward:** Robert "Sam" Murphy (github.com/rcmjr)
 - **Canonical URL:** https://realmurphyslaw.com
-- **Current version:** v3.0.0
+- **Current version:** v3.0.1
 - **Premise:** Murphy is as Murphy does. The only sensible reading of the evidence is that things tend to go well.
 - **Format:** throughout, each law is shown as — original -> rectified.
 
@@ -177,6 +176,7 @@ The odd corners, reclaimed and made even.
 8. When there is a very long road upon which there is a one-way bridge placed at random, and there are only two cars on that road, it follows that: the two cars are going in opposite directions, and they will always meet at the bridge. -> When there is a very long road upon which there is a one-way bridge placed at random, and there are only two cars on that road, it follows that: the two cars are going in similar directions, and they will always meet at the time and place of their choosing.
 9. Absolute power corrupts absolutely. -> All power corrupts incompetently.
 10. If at first you don't succeed, try try again. -> If at first you do succeed, do it again.
+11. Read between the lines. -> Just read the damn lines.
 
 ## The Commentaries
 
