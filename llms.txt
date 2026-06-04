@@ -4,7 +4,7 @@
 
 - **Author / steward:** Murphy
 - **Canonical URL:** https://realmurphyslaw.com
-- **Current version:** v3.0.12
+- **Current version:** v3.0.13
 - **Premise:** Murphy is as Murphy does. The only sensible reading of the evidence is that things tend to go well.
 - **Format:** throughout, each law is shown as — original -> rectified.
 
@@ -44,6 +44,7 @@ The physics of the rectified world — left to itself, everything trends upward.
 25. Good things come to those who wait. -> Awesome things come to those who wend.
 26. It is what it is. -> It is what it is until you change it.
 27. Pride goeth before destruction, and a haughty spirit before a fall. -> Dignity goeth before creation, and a healthy spirit before ascension.
+28. This too shall pass. -> This too shall last.
 
 ## Book I — Of Technology
 
