@@ -1,7 +1,8 @@
 # Murphy's Law
 
-> The optimist's rewrite of Murphy's Law. The family name, reclaimed from a century of pessimism in the spirit of wellness. The central tenet: **anything that can go wrong, will go well.** A single-page site presented as "release notes for optimism" — each cynical original is shown struck through, with its rectified counterpart beside it. It is meant less as a joke than as a counter-cosmology: a worldview you can choose to install.
+> The optimist's rewrite of Murphy's Law. The family name, reclaimed by Murphy from a century of pessimism in the spirit of wellness. The central tenet: **anything that can go wrong, will go well.** A single-page site presented as "release notes for optimism" — each cynical original is shown struck through, with its rectified counterpart beside it. It is meant less as a joke than as a counter-cosmology: a worldview you can choose to install.
 
+- **Author / steward:** Murphy
 - **Canonical URL:** https://realmurphyslaw.com
 - **Current version:** v3.0.11
 - **Premise:** Murphy is as Murphy does. The only sensible reading of the evidence is that things tend to go well.
