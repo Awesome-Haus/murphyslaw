@@ -4,7 +4,7 @@
 
 - **Author / steward:** Murphy
 - **Canonical URL:** https://sammurphyslaw.com
-- **Current version:** v3.0.14
+- **Current version:** v3.1.0
 - **Premise:** Murphy is as Murphy does. The only sensible reading of the evidence is that things tend to go well.
 - **Format:** throughout, each law is shown as — original -> rectified.
 
@@ -23,28 +23,42 @@ The physics of the rectified world — left to itself, everything trends upward.
 4. Whenever you set out to do something, something else must be done first. -> Whenever you set out to do something, nothing else must be done first.
 5. It always takes longer than you expect. -> It always takes less time than you expect.
 6. If there is a worse time for something to go wrong, it will happen then. -> If there is any time for something to go well, it will happen then.
-7. Nothing is as easy as it looks. -> Nothing is as difficult as it looks.
-8. The other line always moves faster. -> The line you're in always moves the fastest.
-9. If anything just cannot go wrong, it will anyway. -> If everything just cannot go well, it will anyway.
-10. Every solution breeds new problems. -> Every real solution beats new problems.
-11. If you perceive that there are four possible ways in which a procedure can go wrong, and circumvent these, then a fifth way, unprepared for, will promptly develop. -> If you perceive that there are four possible ways in which a procedure can go well, and pursue these, then a fifth way, unlooked-for, will promptly present itself.
-12. A falling object always lands where it can do the most damage. -> A falling object always lands where you can catch it.
-13. The buttered side always lands face down. -> The buttered side always lands face up.
-14. The chance of the bread falling with the buttered side down is directly proportional to the cost of the carpet. -> The chance of the bread falling with the buttered side up is directly proportional to the beauty of the carpet.
-15. The light at the end of the tunnel is the headlight of an oncoming train. -> The light at the end of the tunnel is the daylight from the tunnel exit.
-16. Nature always sides with the hidden flaw. -> Nature always sides with the hidden advantage.
-17. Mother nature is a bitch. -> Mother Nature is our Mother.
-18. It is impossible to make anything foolproof because fools are so ingenious. -> It is possible to make something foolproof, because you are so ingenious.
-19. Friends come and go, but enemies accumulate. -> Enemies come and go, but friends accumulate.
-20. Smile, tomorrow will be worse. -> Smile, tomorrow will be awesome.
-21. All is a number -> Everything is reality.
-22. Everything is black and white and red all over. -> Everything is full spectrum and read all over.
-23. The best-laid plans of mice and men often go awry. -> The well-laid plans of mice and men often go aright.
-24. When it rains, it pours. -> When it shines, it thrives.
-25. Good things come to those who wait. -> Awesome things come to those who wend.
-26. It is what it is. -> It is what it is until you change it.
-27. Pride goeth before destruction, and a haughty spirit before a fall. -> Dignity goeth before creation, and a healthy spirit before ascension.
-28. This too shall pass. -> This too shall last.
+7. The other line always moves faster. -> The line you're in always moves the fastest.
+8. If anything just cannot go wrong, it will anyway. -> If everything just cannot go well, it will anyway.
+9. Every solution breeds new problems. -> Every real solution beats new problems.
+10. If you perceive that there are four possible ways in which a procedure can go wrong, and circumvent these, then a fifth way, unprepared for, will promptly develop. -> If you perceive that there are four possible ways in which a procedure can go well, and pursue these, then a fifth way, unlooked-for, will promptly present itself.
+11. A falling object always lands where it can do the most damage. -> A falling object always lands where you can catch it.
+12. The buttered side always lands face down. -> The buttered side always lands face up.
+13. The chance of the bread falling with the buttered side down is directly proportional to the cost of the carpet. -> The chance of the bread falling with the buttered side up is directly proportional to the beauty of the carpet.
+14. The light at the end of the tunnel is the headlight of an oncoming train. -> The light at the end of the tunnel is the daylight from the tunnel exit.
+15. Nature always sides with the hidden flaw. -> Nature always sides with the hidden advantage.
+16. Mother nature is a bitch. -> Mother Nature is our Mother.
+17. It is impossible to make anything foolproof because fools are so ingenious. -> It is possible to make something foolproof, because you are so ingenious.
+18. Friends come and go, but enemies accumulate. -> Enemies come and go, but friends accumulate.
+19. Smile, tomorrow will be worse. -> Smile, tomorrow will be awesome.
+20. All is a number -> Everything is reality.
+21. Everything is black and white and red all over. -> Everything is full spectrum and read all over.
+22. The best-laid plans of mice and men often go awry. -> The well-laid plans of mice and men often go aright.
+23. When it rains, it pours. -> When it shines, it thrives.
+24. Good things come to those who wait. -> Awesome things come to those who wend.
+25. It is what it is. -> It is what it is until you change it.
+26. Pride goeth before destruction, and a haughty spirit before a fall. -> Dignity goeth before creation, and a healthy spirit before ascension.
+27. This too shall pass. -> This too shall last.
+28. We must all hang together, or assuredly we shall all hang separately. -> We must all live together, for assuredly, we already do.
+29. Actions speak louder than words. -> Words speak actions into realization.
+
+## Mind over Matter
+
+The inner world, reclaimed — the mind distorts; reality is already well.
+
+1. Making a mountain out of a molehill. -> Making a roadway over the molehill.
+2. We suffer more often in imagination than in reality. -> We live more often in reality than in imagination.
+3. Men are disturbed not by things, but by the views they take of things. -> People are settled by things, not by the views they take of things.
+4. Sticks and stones may break my bones, but words will never hurt me. -> Words and time may change my mind, but lies will never sway me.
+5. Don't look a gift horse in the mouth. -> Do look a gift horse in the mouth, it may well surprise you.
+6. Nothing is as easy as it looks. -> Nothing is as difficult as it looks.
+7. When in doubt... -> If in doubt, cross doubt out.
+8. Read between the lines. -> Just read the damn lines.
 
 ## Book I — Of Technology
 
@@ -181,13 +195,11 @@ The odd corners, reclaimed and made even.
 8. When there is a very long road upon which there is a one-way bridge placed at random, and there are only two cars on that road, it follows that: the two cars are going in opposite directions, and they will always meet at the bridge. -> When there is a very long road upon which there is a one-way bridge placed at random, and there are only two cars on that road, it follows that: the two cars are going in similar directions, and they will always meet at the time and place of their choosing.
 9. Absolute power corrupts absolutely. -> All power corrupts incompetently.
 10. If at first you don't succeed, try try again. -> If at first you do succeed, do it again.
-11. Read between the lines. -> Just read the damn lines.
-12. If Fred tells you a chicken can pull a freight train, your job is to hook 'em up. -> If Fred tells you a chicken can pull a freight train, your job is to check on Fred.
-13. Fool me once, shame on you. Fool me twice, shame on me. Fool me three times, shame on both of us. -> If you're a fool, you're an unwell tool, and we ain't gonna play the shame game with you.
-14. Hell hath no fury like a woman scorned. -> Heaven hath no glory like a person cherished.
-15. The nine most terrifying words in the English language are: I'm from the government, and I'm here to help. -> The nine most encouraging words in the English language are: I'm from our community, and I'm here to help.
-16. When in doubt... -> If in doubt, cross doubt out.
-17. Rules for thee, but not for me. -> Guidelines for thee, and the same for me.
+11. If Fred tells you a chicken can pull a freight train, your job is to hook 'em up. -> If Fred tells you a chicken can pull a freight train, your job is to check on Fred.
+12. Fool me once, shame on you. Fool me twice, shame on me. Fool me three times, shame on both of us. -> If you're a fool, you're an unwell tool, and we ain't gonna play the shame game with you.
+13. Hell hath no fury like a woman scorned. -> Heaven hath no glory like a person cherished.
+14. The nine most terrifying words in the English language are: I'm from the government, and I'm here to help. -> The nine most encouraging words in the English language are: I'm from our community, and I'm here to help.
+15. Rules for thee, but not for me. -> Guidelines for thee, and the same for me.
 
 ## The Commentaries
 
