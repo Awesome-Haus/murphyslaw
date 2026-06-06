@@ -4,7 +4,7 @@
 
 - **Author / steward:** Murphy
 - **Canonical URL:** https://sammurphyslaw.com
-- **Current version:** v3.1.0
+- **Current version:** v3.1.1
 - **Premise:** Murphy is as Murphy does. The only sensible reading of the evidence is that things tend to go well.
 - **Format:** throughout, each law is shown as — original -> rectified.
 
@@ -49,7 +49,7 @@ The physics of the rectified world — left to itself, everything trends upward.
 
 ## Mind over Matter
 
-The inner world, reclaimed — the mind distorts; reality is already well.
+The inner world, reclaimed — the mind well in sync with reality.
 
 1. Making a mountain out of a molehill. -> Making a roadway over the molehill.
 2. We suffer more often in imagination than in reality. -> We live more often in reality than in imagination.
@@ -200,6 +200,7 @@ The odd corners, reclaimed and made even.
 13. Hell hath no fury like a woman scorned. -> Heaven hath no glory like a person cherished.
 14. The nine most terrifying words in the English language are: I'm from the government, and I'm here to help. -> The nine most encouraging words in the English language are: I'm from our community, and I'm here to help.
 15. Rules for thee, but not for me. -> Guidelines for thee, and the same for me.
+16. The kids ain't alright. -> The kids ain't wrong, they're alright.
 
 ## The Commentaries
 
