@@ -1,5 +1,5 @@
-# sammurphyslaw.com — crawl freely
+# murphyslaw.fyi — crawl freely
 User-agent: *
 Allow: /
 
-Sitemap: https://sammurphyslaw.com/sitemap.xml
+Sitemap: https://murphyslaw.fyi/sitemap.xml
